@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向业务落地的 AI Agent 学习路线：从 LLM、RAG、LangChain 到 LangGraph 与 LangSmith。">
+  <title>AI Agent 学习路线 · 从会调用模型到做出业务工具</title>
+  <style>
+    :root{--bg:#f7f8fc;--ink:#18212f;--muted:#667085;--card:#fff;--line:#e7eaf0;--brand:#635bff;--brand2:#10b981;--shadow:0 16px 45px #202b5214}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 22px}.hero{background:linear-gradient(135deg,#171b36 0%,#29235b 55%,#533d9e 100%);color:#fff;padding:78px 0 96px;overflow:hidden}.hero h1{max-width:800px;font-size:clamp(36px,6vw,72px);line-height:1.08;letter-spacing:-.05em;margin:18px 0}.hero p{max-width:700px;color:#d9d9ee;font-size:19px;margin:22px 0 30px}.eyebrow{color:#a9ffdb;font-weight:750;letter-spacing:.08em}.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-block;border-radius:12px;padding:11px 17px;font-weight:700;background:#fff;color:#29235b}.btn.alt{background:#ffffff16;color:#fff;border:1px solid #ffffff3d}.nav{position:sticky;top:0;z-index:3;background:#ffffffdd;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:58px}.logo{font-weight:850;color:#29235b}.navlinks{display:flex;gap:20px;color:var(--muted);font-size:14px}.section{padding:70px 0}.section h2{font-size:34px;letter-spacing:-.03em;margin:0 0 10px}.lead{color:var(--muted);max-width:720px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}.card h3{margin:0 0 8px;font-size:20px}.card p{color:var(--muted);margin:8px 0}.tag{display:inline-block;background:#eeecff;color:#5148c8;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:750;margin-bottom:12px}.roadmap{position:relative;margin-top:34px}.step{display:grid;grid-template-columns:84px 1fr;gap:20px;position:relative;padding-bottom:26px}.step:not(:last-child):after{content:"";position:absolute;left:39px;top:54px;bottom:0;border-left:2px dashed #cbd0dc}.num{width:80px;height:80px;border-radius:24px;display:grid;place-items:center;background:#29235b;color:#fff;font-size:24px;font-weight:850;z-index:1}.stepbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px}.stepbox h3{margin:0}.stepbox p{margin:4px 0;color:var(--muted)}.check{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}.check div{padding:10px 13px;background:#f3fbf7;border-radius:10px;color:#176b4d}.code{background:#171b2f;color:#e7e9ff;border-radius:16px;padding:22px;overflow:auto;font:14px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace}.callout{border-left:4px solid var(--brand2);background:#ecfdf5;padding:18px 20px;border-radius:0 14px 14px 0;margin-top:24px}.footer{padding:35px 0 55px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}@media(max-width:760px){.grid{grid-template-columns:1fr}.navlinks{display:none}.step{grid-template-columns:55px 1fr;gap:13px}.num{width:55px;height:55px;border-radius:17px;font-size:18px}.step:not(:last-child):after{left:27px;top:55px}.check{grid-template-columns:1fr}.hero{padding-top:54px}}
+  </style>
+</head>
+<body>
+  <header class="hero" id="top"><div class="wrap">
+    <div class="eyebrow">AI AGENT ROADMAP · 业务实战向</div>
+    <h1>从会调用模型，<br>到做出真正能干活的 Agent。</h1>
+    <p>一条给开发者的学习路线：先打牢 LLM 基础，再掌握 RAG、工具调用、LangChain、LangGraph 与 LangSmith，最后把它们装进可控、可评估、可上线的业务流程。</p>
+    <div class="buttons"><a class="btn" href="#roadmap">开始学习</a><a class="btn alt" href="#project">看实战项目</a></div>
+  </div></header>
+  <nav class="nav"><div class="wrap"><a class="logo" href="#top"> AI Agent 学习路线</a><div class="navlinks"><a href="#roadmap">路线</a><a href="#stack">技术栈</a><a href="#project">项目</a><a href="#rules">原则</a></div></div></nav>
+  <main>
+    <section class="section"><div class="wrap"><h2>先搞清楚：这些工具各自干什么</h2><p class="lead">不要把框架当魔法。它们分别负责能力、流程和观测，组合起来才是业务 Agent 的工程底座。</p><div class="grid" id="stack">
+      <article class="card"><span class="tag">能力组件</span><h3>LangChain</h3><p>连接模型、Prompt、结构化输出、工具、Retriever 和 RAG。适合快速搭积木。</p></article>
+      <article class="card"><span class="tag">流程编排</span><h3>LangGraph</h3><p>管理状态、分支、循环、重试、人工审批与长任务。适合做可控的业务工作流。</p></article>
+      <article class="card"><span class="tag">调试评估</span><h3>LangSmith</h3><p>追踪每次调用，查看 Prompt、工具参数、延迟和成本，并建立数据集做回归评估。</p></article>
+    </div></div></section>
+    <section class="section" id="roadmap"><div class="wrap"><h2>建议学习路线</h2><p class="lead">按项目驱动学习。每一阶段都产出一个可运行的小成果，别在教程收藏夹里修仙。</p><div class="roadmap">
+      <div class="step"><div class="num">01</div><div class="stepbox"><h3>LLM 基础与结构化输出</h3><p>理解消息、Token、上下文、温度、Streaming、Function Calling 和 Pydantic Schema。</p><div class="check"><div> 能稳定调用模型</div><div> 输出可被程序解析</div></div></div></div>
+      <div class="step"><div class="num">02</div><div class="stepbox"><h3>工具调用：让 Agent 能办事</h3><p>把查询订单、查库存、创建工单等能力封装成职责单一、参数明确、可审计的工具。</p><div class="check"><div> 参数校验与错误处理</div><div> 权限、超时与幂等</div></div></div></div>
+      <div class="step"><div class="num">03</div><div class="stepbox"><h3>RAG：让回答有依据</h3><p>学习文档解析、切分、Embedding、向量库、混合检索、Rerank、引用与拒答。</p><div class="check"><div> 召回结果可检查</div><div> 找不到就明确拒答</div></div></div></div>
+      <div class="step"><div class="num">04</div><div class="stepbox"><h3>LangGraph：编排业务流程</h3><p>用 State、Node、Edge 和 Checkpoint 设计分支、循环、重试、人工审批和可恢复执行。</p><div class="check"><div> 高风险操作人工确认</div><div> 流程状态可恢复</div></div></div></div>
+      <div class="step"><div class="num">05</div><div class="stepbox"><h3>LangSmith：评估与上线</h3><p>追踪链路、建立测试集、监控错误率与成本，用真实业务指标持续迭代。</p><div class="check"><div> 工具调用正确率</div><div> 延迟、成本与人工接管率</div></div></div></div>
+    </div></div></section>
+    <section class="section" id="project"><div class="wrap"><h2>推荐第一个实战项目</h2><p class="lead">做一个“企业售后 Agent”，把知识问答和业务执行串起来。</p><div class="card"><h3>用户：我想退掉订单 A123</h3><div class="code">用户请求
+  ↓
+意图识别 → 检查登录与权限
+  ↓
+查询订单 → 检索退款规则
+  ↓
+风险判断 ── 低风险 → 自动创建工单
+       └── 高风险 → 暂停并请求人工审批
+  ↓
+记录审计日志 → 返回带依据的结果</div><div class="callout"><strong>核心原则：</strong>查询可以自动化，退款、删数据、改合同等高风险写操作必须有明确权限和人工确认。模型不是保安，别让它拿着万能钥匙到处溜达。</div></div></div></section>
+    <section class="section" id="rules"><div class="wrap"><h2>业务 Agent 的 5 条底线</h2><div class="grid"><article class="card"><h3>1. 先定义业务任务</h3><p>从“自动处理退款”开始，不要从“做一个万能 Agent”开始。</p></article><article class="card"><h3>2. 工具单一职责</h3><p>明确的 API 胜过 execute_anything。边界越清楚，行为越可控。</p></article><article class="card"><h3>3. 权限前置</h3><p>权限过滤要发生在检索和执行阶段，不能只写在 Prompt 里。</p></article><article class="card"><h3>4. 结果必须可追溯</h3><p>RAG 要带引用，写操作要有审计日志，失败要返回真实状态。</p></article><article class="card"><h3>5. 用数据持续评估</h3><p>准备真实样例做回归测试，别用“我试了一次感觉还行”上线。</p></article><article class="card"><h3>6. 先简单，再升级</h3><p>能用确定性流程解决的地方，不要为了炫技强行塞一个 Agent。</p></article></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap">持续学习，持续验证，持续把黑盒变成可观测的工程。 · GitHub Pages ready</div></footer>
+</body>
+</html>
